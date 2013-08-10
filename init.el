@@ -278,15 +278,15 @@
 
 
 ;; COQ
-(load-file "~/.emacs.d/ProofGeneral-4.1/generic/proof-site.el")
-;;(load-file "/opt/local/share/ProofGeneral/generic/proof-site.el")
-(setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist))
-(autoload 'coq-mode "coq" "Major mode for editing Coq vernacular." t)
-(autoload 'run-coq "inferior-coq" "Run an inferior Coq process." t)
-(autoload 'run-coq-other-window "inferior-coq"
-  "Run an inferior Coq process in a new window." t)
-(autoload 'run-coq-other-frame "inferior-coq"
-  "Run an inferior Coq process in a new frame." t)
+;; (load-file "~/.emacs.d/ProofGeneral-4.1/generic/proof-site.el")
+;; ;;(load-file "/opt/local/share/ProofGeneral/generic/proof-site.el")
+;; (setq auto-mode-alist (cons '("\\.v$" . coq-mode) auto-mode-alist))
+;; (autoload 'coq-mode "coq" "Major mode for editing Coq vernacular." t)
+;; (autoload 'run-coq "inferior-coq" "Run an inferior Coq process." t)
+;; (autoload 'run-coq-other-window "inferior-coq"
+;;   "Run an inferior Coq process in a new window." t)
+;; (autoload 'run-coq-other-frame "inferior-coq"
+;;   "Run an inferior Coq process in a new frame." t)
 ;(require 'pretty-mode)
 ;(global-pretty-mode 1)
 
