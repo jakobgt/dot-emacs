@@ -1,3 +1,0 @@
-(setq load-path (cons "/opt/local/share/emacs/site-lisp/" (cons "~/.emacs.d" load-path)))
-
-(require 'init)
