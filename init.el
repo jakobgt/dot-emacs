@@ -61,6 +61,15 @@
 ;; dot-emacs -*- emacs-lisp -*-
 (setq load-path (cons "/opt/local/share/emacs/site-lisp/" (cons "~/.emacs.d" load-path)))
 
+
+; Code for highlighting column 90
+(require 'fill-column-indicator)
+(defun show-column-at-90-chars ()
+  "A hook for showing a vertical ruler at character 90"
+   (setq fci-rule-column 90)
+   (fci-mode 1))
+;  (
+
 ;; SML
 ;(autoload 'sml-mode "sml-mode" () t)
 (autoload 'sml-mode "sml-mode-color" () t)
@@ -298,9 +307,11 @@
       '(lambda ()
         (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 (add-hook 'yaml-mode-hook 'my-set-ctrl-j-to-delete-back-char)
+(add-hook 'yaml-mode-hook 'show-column-at-90-chars)
 
 ;; Ruby
 (add-hook 'ruby-mode-hook 'my-set-ctrl-j-to-delete-back-char)
+(add-hook 'ruby-mode-hook 'show-column-at-90-chars)
 
 ;; SCSS (SASS language)
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/folder-where-you-put-scss-mode-el"))
@@ -309,6 +320,7 @@
 (add-to-list 'auto-mode-alist '("\\.scss.erb\\'" . scss-mode))
 (setq scss-output-directory "/tmp/sass")
 (setq css-indent-offset 2)
+(add-hook 'scss-mode-hook 'show-column-at-90-chars)
 (require 'aj-compilation)
 (require 'lorem-ipsum)
 
@@ -326,7 +338,10 @@
 
 (require 'haml-mode)
 ; HAML mode
- (add-hook 'haml-mode-hook
+(add-hook 'haml-mode-hook
                (lambda ()
                  (setq indent-tabs-mode nil)
                  (define-key haml-mode-map "\C-m" 'newline-and-indent)))
+(add-hook 'haml-mode-hook 'show-column-at-90-chars)
+(column-number-mode 1)
+
