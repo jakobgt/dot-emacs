@@ -312,6 +312,13 @@
 ;; Ruby
 (add-hook 'ruby-mode-hook 'my-set-ctrl-j-to-delete-back-char)
 (add-hook 'ruby-mode-hook 'show-column-at-90-chars)
+;; We set up highlighting of code blocks
+(require 'hrb-mode)
+;; highlight keywords if both are visible, highlight complete block otherwise
+(setq hrb-highlight-mode 'mixed)
+;; enable hrb-mode
+(hrb-mode t)
+
 
 ;; SCSS (SASS language)
 ;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/folder-where-you-put-scss-mode-el"))
@@ -323,7 +330,6 @@
 (add-hook 'scss-mode-hook 'show-column-at-90-chars)
 (require 'aj-compilation)
 (require 'lorem-ipsum)
-
 
 ;; Coffee Script
 (add-to-list 'load-path "~/.emacs.d/elpa/coffee-mode-0.4.1")
