@@ -1,6 +1,8 @@
 (setenv "PATH" (getenv "PATH"))
 (global-set-key "\C-x\C-a" 'auto-fill-mode)
 
+(setq default-directory "~/.")
+
 (setq tab-width 2)
  ;;; Prevent Extraneous Tabs
 (setq-default indent-tabs-mode nil)
@@ -91,26 +93,26 @@
 		  auto-mode-alist)))
 
 
-(require 'tex-site)
+;; (require 'tex-site)
 ;; AUCTeX setup, will turn on reftex mode when editing LaTeX documents
-(setq TeX-auto-save t)     ;; Enable parse on load.
-(setq TeX-parse-self t)    ;; Enable parse on save. will create the .auto directory
-(setq TeX-auto-untabify t) ;; Automatically remove all tabs from file on save
-(setq-default TeX-master nil)
+;; (setq TeX-auto-save t)     ;; Enable parse on load.
+;; (setq TeX-parse-self t)    ;; Enable parse on save. will create the .auto directory
+;; (setq TeX-auto-untabify t) ;; Automatically remove all tabs from file on save
+;; (setq-default TeX-master nil)
 
-(add-hook 'latex-mode-hook 'turn-on-reftex)
-(add-hook 'latex-mode-hook 'turn-on-auto-fill)
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
-(add-hook 'LaTeX-mode-hook 'my-set-ctrl-j-to-delete-back-char)
-(add-hook 'bibtex-mode-hook 'my-set-ctrl-j-to-delete-back-char)
-(setq reftex-plug-into-auctex t)
-(custom-set-variables
+;; (add-hook 'latex-mode-hook 'turn-on-reftex)
+;; (add-hook 'latex-mode-hook 'turn-on-auto-fill)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+;; (add-hook 'LaTeX-mode-hook 'my-set-ctrl-j-to-delete-back-char)
+;; (add-hook 'bibtex-mode-hook 'my-set-ctrl-j-to-delete-back-char)
+;; (setq reftex-plug-into-auctex t)
+;; (custom-set-variables
 ;;   custom-set-variables was added by Custom.
 ;;   If you edit it by hand, you could mess it up, so be careful.
 ;;   Your init file should contain only one such instance.
 ;;   If there is more than one, they won't work right.
- '(TeX-PDF-mode t))
+;; '(TeX-PDF-mode t))
 ;;(custom-set-faces
 ;;   custom-set-faces was added by Custom.
 ;;   If you edit it by hand, you could mess it up, so be careful.
