@@ -1,6 +1,52 @@
 (setenv "PATH" (getenv "PATH"))
 (global-set-key "\C-x\C-a" 'auto-fill-mode)
 
+;;;; package.el
+(require 'package)
+(setq package-user-dir "~/.emacs.d/elpa/")
+(add-to-list 'package-archives
+'("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+'("melpa" . "http://melpa.milkbox.net/packages/") t)
+;(add-to-list 'package-archives
+;'("quasi-melpa" . "http://quasi.milkbox.net/packages/") t)
+(package-initialize)
+
+(defvar abachm-packages
+  '(
+  powerline
+  ido-ubiquitous
+  ido-vertical-mode
+  find-file-in-project
+  magit
+  yasnippet
+  dropdown-list
+  js2-mode
+  mmm-mode
+  git-commit-mode
+  gist
+  go-mode
+  json-mode
+  jedi
+  python-mode
+  solarized-theme
+  puppet-mode
+  pep8
+  flymake-python-pyflakes
+  flymake-cursor
+  yaml-mode
+  markdown-mode
+  ))
+
+(defun abachm-install-packages ()
+  "Install my list of packages."
+  (interactive)
+  (package-refresh-contents)
+  (mapc #'(lambda (package)
+            (unless (package-installed-p package)
+              (package-install package)))
+        abachm-packages))
+
 (setq default-directory "~/.")
 
 (setq tab-width 2)
@@ -28,7 +74,7 @@
 (add-hook 'text-mode-hook 
 	  (lambda () (flyspell-mode 1)))
 
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
+;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'c-mode-hook (lambda () (hs-minor-mode 1)))
 ;;To use danish characters as they are in Mac OS X
 (global-unset-key "\M-'")
