@@ -107,7 +107,7 @@
 
 ;; dOvs.el -*- emacs-lisp -*-
 ;; dot-emacs -*- emacs-lisp -*-
-(setq load-path (cons "/opt/local/share/emacs/site-lisp/" (cons "~/.emacs.d" load-path)))
+(setq load-path (cons "/opt/local/share/emacs/site-lisp/" (cons "~/.emacs.d/lisp" load-path)))
 
 
 ; Code for highlighting column 90
@@ -130,8 +130,6 @@
 
 
 ;; Scheme.
-(setq load-path (cons "~/.emacs.d" load-path))
-
 (autoload 'petite-chez-scheme-mode "petite-chez-scheme-mode-color" () t)
 (setq auto-mode-alist
       (cons '("\\.scm$" . petite-chez-scheme-mode)
